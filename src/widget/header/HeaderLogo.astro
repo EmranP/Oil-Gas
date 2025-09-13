@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets'
+---
+
+<div class={'flex items-center gap-[24px]'}>
+	<Image
+		src={'/assets/icons/logo.svg'}
+		alt={'Logo'}
+		width={52}
+		height={82}
+		loading={"eager"}
+	/>
+	<Image
+		src={'/assets/header/title.png'}
+		alt={'Logo-with-title'}
+		width={284}
+		height={62}
+		loading={"eager"}
+	/>
+</div>
+

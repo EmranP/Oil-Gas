@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets'
+import { ButtonArrow } from '../ui/ButtonArrow.ui'
+import { Container } from '../ui/Container.ui'
+import { WrapperContentSection } from '../ui/Wrapper.ui'
+
+---
+
+<WrapperContentSection>
+	<Container>
+		<div class='flex gap-[114px] items-center'>
+			<div style='flex: 0 1 auto;'>
+				<Image src={'/assets/main/service.png'} alt={'service'} width={566} height={396} class={'rounded-2xl'}/>
+			</div>
+			<div class='space-y-[27px] max-w-[782px] pt-[141px] pl-[150px] relative' style='flex: 1 1 auto;'>
+				<div class='about-sup-tile__line'>
+					<div></div>
+					<h2 class='sup-tile'>Our Services & Products</h2>
+				</div>
+				<h1 class='text-[64px] text-white font-semibold leading-normal'>Our Core Services</h1>
+				<div>
+					<p class='text-[18px] text-white leading-[32px] font-normal'>
+						The nice thing about beginning hiking is that you don’t really need any special gear, you can probably get away with things you already have.
+						Let’s start with clothing. A typical mistake hiking beginners make is wearing jeans and regular clothes, which will get heavy and chafe wif they get sweaty or wet.
+					</p>
+				</div>
+				<ButtonArrow title='read more' rotate='cursor-pointer text-[18px]' textItems='text-right cursor-pointer text-subTitle' justifyItems="justify-baseline" icon='/assets/icons/arrow-01.svg'/>
+				<div class='about-section__order about-section__order_service'>
+					<h1>02</h1>
+				</div>
+			</div>
+		</div>
+	</Container>
+</WrapperContentSection>
