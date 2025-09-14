@@ -19,4 +19,4 @@ export const navbarList = [
 		id: '#contactUs',
 		name: 'Contact us',
 	},
-]
+] as const

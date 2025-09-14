@@ -9,9 +9,11 @@ export const HeaderNav: FC = () => {
 					<li
 						key={navItem.id}
 						id={navItem.id}
-						className={'text-[18px] font-normal leading-normal'}
+						className={
+							'text-[18px] font-normal leading-normal cursor-pointer hover:underline'
+						}
 					>
-						{navItem.name}
+						<a href={navItem.id}>{navItem.name}</a>
 					</li>
 				))}
 			</ul>

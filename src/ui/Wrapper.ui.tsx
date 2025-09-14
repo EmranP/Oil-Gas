@@ -26,11 +26,12 @@ export const WrapperContent: FC<PropsWithChildren> = ({ children }) => {
 }
 
 export const WrapperContentSection: FC<IWrapperContentSectionProps> = ({
+	sectionId,
 	children,
 	classStyle,
 }) => {
 	return (
-		<section className={`section_content ${classStyle ?? ''}`}>
+		<section id={sectionId} className={`section_content ${classStyle ?? ''}`}>
 			{children}
 		</section>
 	)
