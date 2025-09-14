@@ -1,0 +1,35 @@
+---
+import { Image } from 'astro:assets'
+import { Container } from '../ui/Container.ui'
+import { WrapperContentSection } from '../ui/Wrapper.ui'
+---
+
+<WrapperContentSection sectionId="locations">
+	<Container>
+		<h2 class='sup-tile mb-[35px]'>LOCATIONS</h2>
+		<div class='flex justify-between'>
+			<div class='max-w-[482.456px]'>
+				<div class='relative'>
+					<h2 class='text-[64px] font-semibold leading-normal'>Countries in which we operate</h2>
+					<Image src={'/assets/shared/content-logo.png'} alt={'content-logo'} width={88} height={113} class={'absolute -top-[30px] -right-[30px]'}/>
+				</div>
+			</div>
+			<div class='max-w-[482.456px]'>
+				<p class='text-[18px] leading-[32px] font-medium'>We operate on almost all continents. We have offices in Azerbaijan, Turkey, Georgia, Ukraine, Russia, UAE, Kazakhstan, Turkmenistan and other countries.</p>
+			</div>
+		</div>
+		<div class='-mt-[5%]'>
+			<div class='relative'>
+				<Image src={'/assets/icons/location.svg'} alt={'map'} width={1462} height={669}/>
+				<Image src={'/assets/lines/01.png'} alt={'ru'} width={250} height={306} class={'absolute top-[75px] right-[535px]'}/>
+				<Image src={'/assets/lines/02.png'} alt={'uk'} width={89} height={336} class={'absolute top-[88px] right-[610px]'}/>
+				<Image src={'/assets/lines/03.png'} alt={'tk'} width={71} height={345} class={'absolute top-[120px] right-[570px]'}/>
+				<Image src={'/assets/lines/04.png'} alt={'uae'} width={38} height={200} class={'absolute top-[206px] right-[525px]'}/>
+				<Image src={'/assets/lines/05.png'} alt={'azb'} width={115} height={444} class={'absolute top-[127px] right-[444px]'}/>
+				<Image src={'/assets/lines/06.png'} alt={'gs'} width={119} height={204} class={'absolute top-[115px] right-[415px]'}/>
+				<Image src={'/assets/lines/07.png'} alt={'kaz'} width={125} height={336} class={'absolute top-[100px] right-[360px]'}/>
+				<Image src={'/assets/lines/08.png'} alt={'tm'} width={200} height={437} class={'absolute top-[130px] right-[280px]'}/>
+			</div>
+		</div>
+	</Container>
+</WrapperContentSection>

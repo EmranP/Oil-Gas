@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets'
+import { ButtonArrow } from '../ui/ButtonArrow.ui'
+import { Container } from '../ui/Container.ui'
+import { WrapperContentSection } from '../ui/Wrapper.ui'
+---
+
+<WrapperContentSection classStyle='section_content_about' sectionId="aboutUs">
+	<Container>
+		<div class='flex gap-[90px] items-center relative'>
+			<div class='space-y-[27px] max-w-[800px] py-[195px] pl-[126px]'>
+				<div class='about-sup-tile__line'>
+					<div></div>
+					<h2 class='sup-tile'>About us</h2>
+				</div>
+				<h1 class='text-[64px] text-white font-semibold leading-normal'>About Our Company</h1>
+				<div>
+					<p class='text-[18px] text-white leading-[32px] font-normal'>We are an international oil & gas engineering company delivering innovative solutions for upstream, midstream, and downstream projects.  Our mission is to combine technology, safety, and sustainability to support global energy demands while ensuring efficiency and reliability.</p>
+				</div>
+				<ButtonArrow title='read more' rotate='cursor-pointer text-[18px]' textItems='text-right cursor-pointer text-subTitle' justifyItems="justify-baseline" icon='/assets/icons/arrow-01.svg' />
+			</div>
+			<div>
+				<Image src={'/assets/main/about.png'} alt={'about'} width={566} height={720}/>
+			</div>
+			<div class='about-section__order'>
+				<h1>01</h1>
+			</div>
+		</div>
+	</Container>
+</WrapperContentSection>

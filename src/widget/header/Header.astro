@@ -1,0 +1,16 @@
+---
+import { Container } from '../../ui/Container.ui'
+import HeaderLogo from './HeaderLogo.astro'
+import { HeaderNav } from './HeaderNav'
+---
+
+<header class='mb-[140px]'>
+	<Container>
+		<div class={'flex items-center gap-[122px]'}>
+			<HeaderLogo />
+			<HeaderNav client:load />
+		</div>
+	</Container>
+</header>
+	
+

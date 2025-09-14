@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets'
+import { productList } from '../constants/product.constants'
+import { Container } from '../ui/Container.ui'
+import { WrapperContentSection } from '../ui/Wrapper.ui'
+---
+
+<WrapperContentSection sectionId="petrochemicals">
+	<Container>
+		<div class='flex justify-between relative'>
+			<div class='product-item space-y-[20px]'>
+				<h1>03</h1>
+				<div class='product-sub_item'>
+					<div></div>
+					<h2>Petrochemicals</h2>
+				</div>
+				<h3>Products we supply</h3>
+			</div>
+			<div class='product-item_list space-y-[42px]'>
+				<h1>Petrochemical Products</h1>
+				<div class='product-item_list_content'>
+					<p>Petrochemicals are sophisticated products, and Coral Energy delivering them to customers. Our dynamic petrochemicals team runs positions in</p>
+				</div>
+				<div class='product-item_list_wrapper'>
+					{productList.map(pl => (
+						<div class='product-item_list_element'>
+							<div></div>
+							<h2>{pl}</h2>
+						</div>
+					))}
+				</div>
+				<div class='product-item_list_content'>
+					<p>Petrochemicals are sophisticated products, and Coral Energy delivering them to customers. Our dynamic petrochemicals team runs positions in</p>
+				</div>
+			</div>
+			<div class='absolute top-[40px] -left-[155px]'>
+				<Image src={'/assets/icons/drop.svg'} alt={'fire-drop'} width={394} height={644}/>
+			</div>
+		</div>
+	</Container>
+</WrapperContentSection>

@@ -1,0 +1,12 @@
+---
+import { navbarList } from '../../constants/nav.constants'
+---
+
+<div class='footer-col__nav'>
+	<h1>Navigation</h1>
+	<ul class='footer-col__nav_list space-y-[18px]'>
+		{navbarList.map(navItem => (
+			<li class='hover:underline'><a href={navItem.id}>{navItem.name}</a></li>
+		))}
+	</ul>
+</div>

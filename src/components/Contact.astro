@@ -1,0 +1,19 @@
+---
+import { ContactForm } from '../ui/ContactForm.ui'
+import { Container } from '../ui/Container.ui'
+import { WrapperContentSection } from '../ui/Wrapper.ui'
+---
+
+<WrapperContentSection sectionId="contactUs">
+	<Container>
+		<div class='contact-wrapper'>
+			<div class='contact-body'>
+				<div class='text-center'>
+					<h1>CONTACT</h1>
+				</div>
+				<h2>Feel Free to Contact Us</h2>
+				<ContactForm client:load/>
+			</div>
+		</div>
+	</Container>
+</WrapperContentSection>
