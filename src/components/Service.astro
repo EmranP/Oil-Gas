@@ -1,18 +1,38 @@
 ---
-import { Image } from 'astro:assets'
 import { ButtonArrow } from '../ui/ButtonArrow.ui'
 import { Container } from '../ui/Container.ui'
+import { ServiceSliders } from '../ui/Sliders.ui'
 import { WrapperContentSection } from '../ui/Wrapper.ui'
 
----
+const slides = [
+  {
+    id: 's1',
+    title: 'Vision',
+    text: 'To become a leading internationally recognized engineering and process automation solutions company.',
+    img: '/assets/main/service.png',
+  },
+  {
+    id: 's2',
+    title: 'Production Optimization',
+    text: 'Realtime monitoring and intelligent IOT systems to maximize output.',
+    img: '/assets/main/service.png',
+  },
+  {
+    id: 's3',
+    title: 'Logistics & Transport',
+    text: 'Secure and efficient movement of energy resources across the globe.',
+    img: '/assets/main/service.png',
+  },
+];
 
+---
 <WrapperContentSection sectionId="service">
 	<Container>
-		<div class='flex gap-[114px] items-center'>
-			<div style='flex: 0 1 auto;'>
-				<Image src={'/assets/main/service.png'} alt={'service'} width={566} height={396} class={'rounded-2xl'}/>
+		<div class='flex sm:flex-row flex-col-reverse sm:gap-[114px] gap-[30px] items-center'>
+			<div style='flex: 0 1 auto;' class='sm:block hidden '>
+				<ServiceSliders slides={slides} client:load/>
 			</div>
-			<div class='space-y-[27px] max-w-[782px] pt-[141px] pl-[150px] relative' style='flex: 1 1 auto;'>
+			<div class='space-y-[27px] max-w-[782px] sm:pt-[141px] pt-[40px] sm:pl-[150px] relative' style='flex: 1 1 auto;'>
 				<div class='about-sup-tile__line'>
 					<div></div>
 					<h2 class='sup-tile'>Our Services & Products</h2>
@@ -31,4 +51,8 @@ import { WrapperContentSection } from '../ui/Wrapper.ui'
 			</div>
 		</div>
 	</Container>
+	<!-- Slider -->
+	 <div class='sm:hidden block'>
+		<ServiceSliders slides={slides} client:load/>
+	 </div>
 </WrapperContentSection>
