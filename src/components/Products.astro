@@ -7,7 +7,7 @@ import { WrapperContentSection } from '../ui/Wrapper.ui'
 
 <WrapperContentSection sectionId="petrochemicals">
 	<Container>
-		<div class='flex justify-between relative'>
+		<div class='flex sm:flex-row flex-col sm:justify-between relative'>
 			<div class='product-item space-y-[20px]'>
 				<h1>03</h1>
 				<div class='product-sub_item'>
@@ -33,8 +33,8 @@ import { WrapperContentSection } from '../ui/Wrapper.ui'
 					<p>Petrochemicals are sophisticated products, and Coral Energy delivering them to customers. Our dynamic petrochemicals team runs positions in</p>
 				</div>
 			</div>
-			<div class='absolute top-[40px] -left-[155px]'>
-				<Image src={'/assets/icons/drop.svg'} alt={'fire-drop'} width={394} height={644}/>
+			<div class='absolute sm:top-[40px] top-[10px] sm:-left-[155px] -left-[100px]'>
+				<Image src={'/assets/icons/drop.svg'} alt={'fire-drop'} width={394} height={644} class={'sm:w-[394px] sm:h-[644px] h-[456px] w-[285px]'} />
 			</div>
 		</div>
 	</Container>

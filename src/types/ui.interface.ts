@@ -34,3 +34,14 @@ export interface IInput {
 export interface ITextarea extends Omit<IInput, 'onChange'> {
 	onInput: (e: ChangeEvent<HTMLTextAreaElement>) => void
 }
+
+export interface ISlidersItems {
+	id: string
+	title: string
+	text: string
+	img: string
+}
+
+export interface ISliders {
+	slides: ISlidersItems[]
+}

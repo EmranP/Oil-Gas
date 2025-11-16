@@ -24,6 +24,12 @@ body {
 	z-index: 10;
 }
 
+@media (max-width: 480px) {
+	.wrapper {
+		padding: 30px 0 30px 0;
+	}
+}
+
 .wrapper-content {
 	flex: 1 1 auto;
 }
@@ -50,6 +56,17 @@ body {
 	z-index: -1;
 }
 
+.wrapper-image-mobile {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	object-fit: cover;
+	image-rendering: optimizeSpeed;
+	z-index: -1;
+	opacity: 0.7;
+}
+
 @media (min-width: 1600px) {
 	.wrapper-image {
 		top: 664px;
@@ -71,9 +88,48 @@ body {
 	background-color: var(--color-bgBody);
 }
 
+@media (max-width: 480px) {
+	.section_content {
+		margin-bottom: 52px;
+	}
+}
+
 .section_content_about {
 	background: linear-gradient(180deg, rgba(11, 29, 38, 0) 5%, #0b1d26 44.38%);
 	z-index: 10;
+	position: relative;
+}
+
+@media (max-width: 480px) {
+	.section_content_about {
+		box-shadow: 0 0 120px 40px rgba(11, 29, 38, 0.9);
+	}
+}
+
+.header-burger {
+	display: none;
+	cursor: pointer;
+	z-index: 50;
+}
+
+@media (max-width: 480px) {
+	.header-burger {
+		z-index: 50;
+		cursor: pointer;
+		display: block;
+	}
+}
+
+.header-burger span {
+	display: block;
+	width: 26px;
+	height: 3px;
+	border-radius: 3px;
+	background-color: #0c1e27;
+}
+
+.header-burger span:not(:last-child) {
+	margin-bottom: 8px;
 }
 
 /* Solution */
@@ -101,6 +157,23 @@ body {
 	text-transform: uppercase;
 }
 
+@media (max-width: 480px) {
+	.solution_sub-title {
+		position: absolute;
+		right: -200px;
+		top: 80px;
+		transform: rotate(90deg);
+		gap: 30px;
+	}
+	.solution_sub-title div {
+		width: 70px;
+	}
+
+	.solution_sub-title h1 {
+		font-size: 8px;
+	}
+}
+
 .solution-title {
 	color: var(--color-mainColor);
 	font-size: 88px;
@@ -108,6 +181,15 @@ body {
 	font-weight: 400;
 	line-height: 100px; /* 113.636% */
 	text-transform: capitalize;
+}
+
+@media (max-width: 480px) {
+	.solution-title {
+		text-align: center;
+		font-size: 32px;
+		line-height: 42px;
+		font-weight: bold;
+	}
 }
 
 /* About */
@@ -138,6 +220,12 @@ body {
 	-webkit-text-fill-color: transparent;
 }
 
+@media (max-width: 480px) {
+	.sup-tile {
+		font-size: 11px;
+	}
+}
+
 .about-section__order {
 	position: absolute;
 	top: 30px;
@@ -158,6 +246,13 @@ body {
 	position: absolute;
 	top: -15px;
 	left: -25px;
+}
+
+/* Location */
+@media (max-width: 480px) {
+	.section-location {
+		margin-bottom: 100px;
+	}
 }
 
 /* Product */
@@ -236,6 +331,7 @@ body {
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 	row-gap: 36px;
 }
+
 .product-item_list_element {
 	display: flex;
 	align-items: center;
@@ -255,6 +351,48 @@ body {
 	font-weight: 500;
 	line-height: normal;
 	max-width: 100px;
+}
+
+@media (max-width: 480px) {
+	.product-item {
+		flex: 1 1 auto;
+		margin-bottom: 50px;
+	}
+
+	.product-item h1 {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.product-sub_item {
+		margin-top: 130px;
+	}
+
+	.product-item h3 {
+		font-size: 50px;
+	}
+
+	.product-item_list h1 {
+		font-size: 25px;
+	}
+
+	.product-item_list_wrapper {
+		row-gap: 26px;
+		column-gap: 60px;
+	}
+
+	.product-item_list_content p {
+		font-size: 14px;
+	}
+	.product-item_list_element div {
+		width: 8px;
+		height: 8px;
+	}
+
+	.product-item_list_element h2 {
+		font-size: 14px;
+	}
 }
 
 /* Contact */
@@ -321,6 +459,30 @@ textarea {
 	line-height: normal;
 }
 
+@media (max-width: 480px) {
+	.contact-wrapper {
+		position: relative;
+		border-radius: 0;
+		background: url('/assets/main/contact.png') center / cover no-repeat;
+		overflow: hidden;
+	}
+
+	.contact-wrapper::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background: rgba(12, 30, 39, 0.7); /* затемнение */
+		z-index: 1;
+	}
+
+	.contact-body {
+		max-width: 100%;
+		padding: 80px 15px;
+		position: relative;
+		z-index: 20;
+	}
+}
+
 /* Footer */
 .footer-row {
 	display: grid;
@@ -353,4 +515,23 @@ textarea {
 
 .footer-col__nav_list li:hover {
 	text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+	.footer-row {
+		display: block;
+	}
+
+	.footer-col__nav h1 {
+		text-align: center;
+	}
+
+	.footer-col__nav {
+		text-align: center;
+		margin-bottom: 30px;
+	}
+
+	.footer-col__nav_list:last-child {
+		margin-bottom: 60px;
+	}
 }

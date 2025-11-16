@@ -8,14 +8,20 @@ export const Wrapper: FC<PropsWithChildren> = ({ children }) => {
 			<img
 				src='/assets/main/mg-top.png'
 				alt='image'
-				className={'wrapper-image-top'}
+				className={'sm:block hidden wrapper-image-top'}
 				loading={'eager'}
 			/>
 			<img
 				src='/assets/main/mg.png'
 				alt='picture'
-				className={'wrapper-image'}
+				className={'sm:block hidden wrapper-image'}
 				loading={'eager'}
+			/>
+			<img
+				src={'/assets/main/mg-mobile.png'}
+				alt={'picture-mobile'}
+				className={'sm:hidden block wrapper-image-mobile'}
+				loading={'lazy'}
 			/>
 		</div>
 	)

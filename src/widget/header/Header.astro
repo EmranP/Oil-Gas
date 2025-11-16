@@ -1,12 +1,14 @@
 ---
 import { Container } from '../../ui/Container.ui'
+import { HeaderBurger } from './HeaderBurger'
 import HeaderLogo from './HeaderLogo.astro'
 import { HeaderNav } from './HeaderNav'
 ---
 
-<header class='mb-[140px]'>
+<header class='sm:mb-[140px] mb-[53px]'>
 	<Container>
-		<div class={'flex items-center gap-[122px]'}>
+		<div class={'flex items-center  sm:gap-[122px]'}>
+			<HeaderBurger client:load />
 			<HeaderLogo />
 			<HeaderNav client:load />
 		</div>

@@ -3,13 +3,14 @@ import { Image } from 'astro:assets'
 ---
 
 
-<div class={'flex items-center gap-[24px]'}>
+<div class={'sm:flex block mx-auto items-center gap-[24px]'}>
 	<Image
 	src={'/assets/icons/logo.svg'}
 	alt={'Logo'}
 	width={52}
 	height={82}
 	loading={"eager"}
+	class={'mx-auto'}
 	/>
 	<Image
 	src={'/assets/header/title.png'}

@@ -9,9 +9,16 @@ export const ButtonArrow: FC<IArrowButton> = ({
 	icon,
 }) => {
 	return (
-		<div className={`flex items-center ${justifyItems} gap-[15px]`}>
-			<span className={textItems}>{title ?? 'Read more'}</span>
-			<img src={icon} alt={title} className={rotate} loading={'lazy'} />
+		<div className={`flex sm:justify-end justify-baseline mb-2`}>
+			<div className={'inline-block'}>
+				<a
+					href='#aboutUs'
+					className={`flex items-center ${justifyItems} gap-[15px]`}
+				>
+					<span className={textItems}>{title ?? 'Read more'}</span>
+					<img src={icon} alt={title} className={rotate} loading={'lazy'} />
+				</a>
+			</div>
 		</div>
 	)
 }
