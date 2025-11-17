@@ -1,4 +1,9 @@
-import type { FC, PropsWithChildren } from 'preact/compat'
+import {
+	useEffect,
+	useRef,
+	type FC,
+	type PropsWithChildren,
+} from 'preact/compat'
 import type { IWrapperContentSectionProps } from '../types/ui.interface'
 
 export const Wrapper: FC<PropsWithChildren> = ({ children }) => {
@@ -34,10 +39,76 @@ export const WrapperContent: FC<PropsWithChildren> = ({ children }) => {
 export const WrapperContentSection: FC<IWrapperContentSectionProps> = ({
 	sectionId,
 	children,
-	classStyle,
+	classStyle = '',
+	rootMargin = '0px 0px -40% 0px',
+	threshold = 0,
+	isAnimation = false,
 }) => {
+	const ref = useRef<HTMLElement | null>(null)
+
+	useEffect(() => {
+		// Эта часть запускается только в браузере
+		if (!ref.current) return
+		if (!isAnimation) return
+
+		const el = ref.current
+
+		// reduced motion
+		const prefersReduced =
+			typeof window !== 'undefined' &&
+			window.matchMedia &&
+			window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+		if (prefersReduced) {
+			el.classList.add('is-visible')
+			el.querySelectorAll<HTMLElement>('.reveal-child').forEach(
+				ch => (ch.style.transitionDelay = '0ms')
+			)
+			return
+		}
+
+		const childrenList = Array.from(
+			el.querySelectorAll<HTMLElement>('.reveal-child')
+		)
+		childrenList.forEach((child, idx) => {
+			const delay = idx * 80
+			child.style.transitionDelay = `${delay}ms`
+			child.style.willChange = 'opacity, transform'
+		})
+
+		const observer = new IntersectionObserver(
+			(entries, obs) => {
+				entries.forEach(entry => {
+					if (!entry.isIntersecting) return
+
+					const top = entry.boundingClientRect.top
+					const vh = window.innerHeight || document.documentElement.clientHeight
+					const triggerPoint = vh * 0.6 // 60% viewport
+
+					if (top <= triggerPoint) {
+						requestAnimationFrame(() => {
+							el.classList.add('is-visible')
+							obs.unobserve(el) // одноразово
+						})
+					}
+				})
+			},
+			{ root: null, rootMargin, threshold }
+		)
+
+		observer.observe(el)
+
+		return () => {
+			observer.disconnect()
+		}
+	}, [isAnimation, rootMargin, threshold])
+
 	return (
-		<section id={sectionId} className={`section_content ${classStyle ?? ''}`}>
+		<section
+			ref={ref}
+			id={sectionId}
+			className={`section_content ${classStyle} ${isAnimation ? 'reveal' : ''}`}
+		>
 			{children}
 		</section>
 	)

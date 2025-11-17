@@ -1,6 +1,12 @@
 import type { ChangeEvent, ReactNode } from 'preact/compat'
 import type { navbarList } from '../constants/nav.constants'
 
+export interface IWrapperSection {
+	rootMargin?: string
+	threshold?: number | number[]
+	children?: ReactNode
+}
+
 export interface IButton {
 	title: string
 }
@@ -19,10 +25,11 @@ type StripHash<T extends string> = T extends `#${infer R}` ? R : T
 
 type TypeSectionId = StripHash<RawSectionId>
 
-export interface IWrapperContentSectionProps {
+export interface IWrapperContentSectionProps extends IWrapperSection {
 	sectionId: TypeSectionId
 	children: ReactNode
 	classStyle?: string
+	isAnimation?: boolean
 }
 
 export interface IInput {
