@@ -40,7 +40,7 @@ export const WrapperContentSection: FC<IWrapperContentSectionProps> = ({
 	sectionId,
 	children,
 	classStyle = '',
-	rootMargin = '0px 0px -40% 0px',
+	rootMargin = '0px 0px -60% 0px',
 	threshold = 0,
 	isAnimation = false,
 }) => {
